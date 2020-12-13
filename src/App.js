@@ -11,8 +11,9 @@ import firebase from 'firebase'
 
 function App() {
 
+  const IMG_SRC = 'https://source.unsplash.com/random'
   const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState('');
 
   useEffect(() => {
     db.collection('todos').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
@@ -42,14 +43,26 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Container maxWidth="sm">
+    <div>
+      <div 
+        className="App"
+        style={{ 
+          backgroundImage: `url(${IMG_SRC})`, 
+          opacity: 0.8, 
+          zIndex: -1, 
+          position: 'absolute',
+          width: '100%',
+          height: '100%'
+        }}
+      />
+      <Container 
+        maxWidth="sm" 
+      >
         <h1>React + Firebase Todo App!</h1>
 
         <form onSubmit={addTodo}>
           <TextField 
             value={input} 
-            label="Task"
             placeholder="Add a task..."
             InputLabelProps={{
               shrink: true,
@@ -57,6 +70,7 @@ function App() {
             variant="outlined"
             fullWidth
             onChange = {(event) => setInput(event.target.value)}
+            style={{ backgroundColor: 'whitesmoke', padding: 10, borderRadius: 5}}
           />
         </form>
 
