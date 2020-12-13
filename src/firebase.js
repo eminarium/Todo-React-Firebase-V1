@@ -2,7 +2,6 @@ import firebase from 'firebase'
 import FIREBASE_API_KEY from './env_variables'
 
 const firebaseConfig = {
-    //apiKey: "AIzaSyDhDdgnQEtUunLgqcR3v8BHx3ZSjFs4LcU",
     apiKey: FIREBASE_API_KEY,
     authDomain: "todo-app-v1-tdv1.firebaseapp.com",
     projectId: "todo-app-v1-tdv1",
