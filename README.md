@@ -28,3 +28,7 @@ Image services: Unsplash
 
 Extra packages used:  
 - Material UI (for decoration)  
+
+Screenshot:
+
+![creenshot](./public/screenshot.png)
